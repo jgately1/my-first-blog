@@ -10,13 +10,16 @@
         <div>
             <p>Welcome to my website!</p>
             <h2><a href="">About</a></h2>
-            <p>He does marketing stuff.</p>
+            <p>Marketing.</p>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Contact</a></h2>
-            <p>What it do.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+
     </body>
 </html>
