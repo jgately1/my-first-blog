@@ -11,7 +11,10 @@
         
     </head>
     <body>
-            <div class="page-header">
+        <div class="page-header">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                {% endif %}
                 <h1><a href="/">Clifford Gately</a></h1>
             </div>
             <div class="content container">
@@ -19,8 +22,8 @@
                     <div class="col-md-8">
                     {% block content %}
                     {% endblock %}
-                    </div>
                 </div>
             </div>
+        </div>
     </body>
 </html>
